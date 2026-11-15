@@ -1,0 +1,1 @@
+export const API = 'https://my-channel-api.YOUR-SUBDOMAIN.workers.dev';

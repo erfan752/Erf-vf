@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erf_vf | اطلاع رسانی</title>
+  <meta name="description" content="رزومه، پروژه‌ها و کانال شخصی">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/channel.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="id">
+      <div class="avatar" aria-hidden="true">
+        <span>ن</span>
+        <img id="avatarImg" src="avatar.jpg" alt="">
+      </div>
+      <div>
+        <h1>نام شما</h1>
+        <p class="bio">توسعه‌دهنده وب. اینجا از کارهایی که می‌سازم می‌نویسم.</p>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="بخش‌ها">
+      <a href="#feed" data-tab="feed">کانال</a>
+      <a href="#projects" data-tab="projects">پروژه‌ها</a>
+      <a href="#resume" data-tab="resume">رزومه</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- کانال -->
+  <section id="feed" class="panel" hidden>
+    <form id="composer" class="admin-form" hidden>
+      <textarea name="text" rows="3" placeholder="چیزی بنویس..."></textarea>
+      <div class="row">
+        <label class="file">
+          <input type="file" name="file" accept="image/*,video/*">
+          <span>عکس یا ویدیو</span>
+        </label>
+        <button type="submit">ارسال</button>
+      </div>
+      <p class="msg" role="status"></p>
+    </form>
+    <div id="posts"></div>
+    <p id="postsEmpty" class="empty" hidden>هنوز پستی منتشر نشده.</p>
+    <button id="more" class="more" hidden>پست‌های قدیمی‌تر</button>
+  </section>
+
+  <!-- پروژه‌ها -->
+  <section id="projects" class="panel" hidden>
+    <form id="projectForm" class="admin-form" hidden>
+      <input name="title" placeholder="عنوان پروژه" required>
+      <textarea name="caption" rows="3" placeholder="کپشن: درباره پروژه بنویس"></textarea>
+      <input name="link" type="url" placeholder="لینک پروژه (اختیاری)" dir="ltr">
+      <div class="row">
+        <label class="file">
+          <input type="file" name="images" accept="image/*" multiple required>
+          <span>عکس‌های گالری</span>
+        </label>
+        <button type="submit">افزودن پروژه</button>
+      </div>
+      <p class="msg" role="status"></p>
+    </form>
+    <div id="projectGrid" class="grid"></div>
+    <p id="projectsEmpty" class="empty" hidden>هنوز پروژه‌ای اضافه نشده.</p>
+  </section>
+
+  <!-- رزومه -->
+  <section id="resume" class="panel" hidden>
+    <article class="paper">
+      <h2>درباره من</h2>
+      <p>اینجا چند جمله درباره خودت بنویس: چه کاری انجام می‌دهی، به چه چیزی علاقه داری و دنبال چه فرصتی هستی.</p>
+
+      <h2>مهارت‌ها</h2>
+      <ul class="skills">
+        <li>JavaScript</li>
+        <li>Node.js</li>
+        <li>HTML و CSS</li>
+        <li>Python</li>
+      </ul>
+
+      <h2>سوابق کاری</h2>
+      <ol class="timeline">
+        <li>
+          <h3>عنوان شغلی</h3>
+          <p class="meta">نام شرکت، ۱۴۰۲ تا اکنون</p>
+          <p>یک یا دو جمله درباره کاری که انجام دادی و نتیجه‌اش.</p>
+        </li>
+        <li>
+          <h3>عنوان شغلی قبلی</h3>
+          <p class="meta">نام شرکت، ۱۴۰۰ تا ۱۴۰۲</p>
+          <p>توضیح کوتاه.</p>
+        </li>
+      </ol>
+
+      <h2>تحصیلات</h2>
+      <ol class="timeline">
+        <li>
+          <h3>رشته و مقطع</h3>
+          <p class="meta">نام دانشگاه، سال فارغ‌التحصیلی</p>
+        </li>
+      </ol>
+
+      <h2>راه‌های ارتباطی</h2>
+      <ul class="contact">
+        <li><a href="mailto:you@example.com" dir="ltr">you@example.com</a></li>
+        <li><a href="https://github.com/USERNAME" dir="ltr">github.com/USERNAME</a></li>
+        <li><a href="https://t.me/USERNAME" dir="ltr">t.me/USERNAME</a></li>
+      </ul>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <button id="logout" class="linklike" hidden>خروج از حالت مدیر</button>
+</footer>
+
+<dialog id="viewer">
+  <button class="close" aria-label="بستن">×</button>
+  <div class="stage"></div>
+  <div class="thumbs"></div>
+  <div class="info">
+    <h2></h2>
+    <p class="cap"></p>
+    <a class="plink" target="_blank" rel="noopener" dir="ltr" hidden>مشاهده پروژه</a>
+    <button class="del linklike" hidden>حذف پروژه</button>
+  </div>
+</dialog>
+
+<script src="app.js" type="module"></script>
+</body>
+</html>
