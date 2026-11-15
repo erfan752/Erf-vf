@@ -161,8 +161,20 @@ body::after {
 [data-fx="blinds"] img {
   opacity: 1;
   --h: 0px;
-  -webkit-mask-image: repeating-linear-gradient(to bottom, #000 0, #000 var(--h), transparent var(--h), transparent 36px);
-  mask-image: repeating-linear-gradient(to bottom, #000 0, #000 var(--h), transparent var(--h), transparent 36px);
+  -webkit-mask-image: repeating-linear-gradient(
+    to bottom,
+    #000 0,
+    #000 var(--h),
+    transparent var(--h),
+    transparent 36px
+  );
+  mask-image: repeating-linear-gradient(
+    to bottom,
+    #000 0,
+    #000 var(--h),
+    transparent var(--h),
+    transparent 36px
+  );
 }
 [data-fx="blinds"] img.in {
   --h: 36px;
@@ -172,8 +184,16 @@ body::after {
 [data-fx="wipe"] img {
   opacity: 1;
   --p: 0%;
-  -webkit-mask-image: linear-gradient(to right, #000 calc(var(--p) - 18%), transparent var(--p));
-  mask-image: linear-gradient(to right, #000 calc(var(--p) - 18%), transparent var(--p));
+  -webkit-mask-image: linear-gradient(
+    to right,
+    #000 calc(var(--p) - 18%),
+    transparent var(--p)
+  );
+  mask-image: linear-gradient(
+    to right,
+    #000 calc(var(--p) - 18%),
+    transparent var(--p)
+  );
 }
 [data-fx="wipe"] img.in {
   --p: 118%;
@@ -214,6 +234,11 @@ body::after {
 .brand {
   font-weight: 800;
   font-size: 1.15rem;
+}
+.brand img {
+  display: block;
+  height: 32px;
+  width: auto;
 }
 .nav nav {
   display: flex;
@@ -473,9 +498,27 @@ h2 {
 }
 .chan-text {
   font-size: clamp(1rem, 1.8vw, 1.15rem);
-  max-width: 28em;
   margin: 0 0 24px;
 }
+
+.more-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.btn-wrap {
+  width: 100px;
+  padding: 10px;
+  background-color: #000;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  color: #fff;
+}
+.btn-wrap:hover{
+  background-color: #111;
+}
+
 @media (min-width: 860px) {
   .chan-grid {
     grid-template-columns: 1fr 360px;
