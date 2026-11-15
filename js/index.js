@@ -41,7 +41,7 @@ async function playGif(box, src, ms, skipTargets) {
   await Promise.race([wait(ms), ...skips]);
 
   img.classList.remove('in');
-  await wait(450);
+  await wait(400);
   img.removeAttribute('src');
   img.remove();
 }
